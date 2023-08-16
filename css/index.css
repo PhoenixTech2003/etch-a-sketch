@@ -13,3 +13,7 @@
     display: flex;
     justify-content: center;
 }
+
+.grid-box{
+    border: 1px solid black;
+}
