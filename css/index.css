@@ -17,3 +17,8 @@
 .grid-box{
     border: 1px solid black;
 }
+
+.grid {
+    width: 20px;
+    height: 20px;
+}
