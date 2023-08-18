@@ -12,7 +12,7 @@
             //assign a class of grid
             //append each div to row
     
-function generateGridBoxes(gridType = 20){
+function generateGridBoxes(gridType = 16){
     let numberOfBoxes = gridType;
     let gridBoxDiv = document.querySelector('.grid-box');
     while(gridType > 0){
