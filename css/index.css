@@ -30,12 +30,18 @@ body{
 }
 
 .grid{
-    width: 30px;
-    height:30px; 
+ 
     border: 2px solid white; 
-    flex: 5 5 auto;
+    flex: 1;
 }
 
 .grid-color{
     background-color: green;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
 }
