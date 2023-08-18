@@ -31,6 +31,7 @@ function generateGridBoxes(gridType = 16){
             count --;
         }
     });
+  addRGBHoverOnGrid();  
 }
 
 function addHoverOnGridBox(){
@@ -38,9 +39,43 @@ function addHoverOnGridBox(){
     box.forEach((div) =>{
         div.addEventListener('mouseover',function(){
             let box = document.querySelectorAll('.grid');
-            box.forEach(()=> this.setAttribute('style','background-color: black;'))
+            box.forEach(()=> this.setAttribute('style','background-color: rgb(255, 87, 220);'))
         })
     })
 }
+function removeCurrentGrid(){
+    let gridBoxDiv = document.querySelectorAll('.row');
+    gridBoxDiv.forEach((row)=>{
+        row.remove();
+    });
+
+}
+
+function addRGBHoverOnGrid(){
+    let squares = document.querySelectorAll('.grid');
+    squares.forEach((square) => {
+        let red = Math.floor(Math.random() * 255);
+        let blue = Math.floor(Math.random() * 255);
+        let green = Math.floor(Math.random() * 255);
+        square.addEventListener('mouseover',function(){
+            let square = document.querySelectorAll('.grid');
+            square.forEach(() => this.setAttribute('style',`background-color: rgb(${red}, ${green}, ${blue}); `))
+        });
+    });
+}
+
+function generateGridType(){
+    button = document.querySelector('.btn');
+    button.addEventListener('click',() =>{
+        let gridType = prompt('Enter grid box type (16 for a 16 X 16)');
+        if(gridType > 100){
+            alert('enter any grid type between 1 and 100 ');
+        }else{
+            removeCurrentGrid();
+            generateGridBoxes(Number(gridType));
+        }
+    });
+}
+
 generateGridBoxes();
-addHoverOnGridBox();
+generateGridType();
